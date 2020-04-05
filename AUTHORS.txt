@@ -1,0 +1,3 @@
+The following people are part of the libtemplate developer team:
+
+author-placeholder    (e-mail: email-placeholder)

@@ -7,4 +7,8 @@ libtemplate developer team
 License
 =======
 
-Insert licensing information.
+The source code documented here is published under a GPL v3 license, which we
+include below.
+
+.. include:: ../LICENSE
+    :literal:

@@ -21,7 +21,7 @@ import subprocess
 
 
 # For setting up libtemplate package.
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Command
 
 
 
@@ -208,6 +208,19 @@ def read_extra_requirements():
 
 
 
+class CleanCommand(Command):
+    """Custom clean command to tidy up the project root."""
+    user_options = []
+    def initialize_options(self):
+        pass
+    def finalize_options(self):
+        pass
+    def run(self):
+        os.system("rm -vrf ./build ./dist ./*.pyc "
+                  "./*.tgz ./*.egg-info ./libtemplate/_version.py")
+
+
+
 def setup_package():
     """Setup ``libtemplate`` package.
 
@@ -238,7 +251,8 @@ def setup_package():
           version=full_version,
           setup_requires=setup_requires,
           install_requires=read_requirements_file('requirements.txt'),
-          extras_require=extras_require)
+          extras_require=extras_require,
+          cmdclass={'clean': CleanCommand})
 
 
     

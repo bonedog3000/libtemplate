@@ -34,13 +34,13 @@ __status__     = "Development"
 ###########################
 
 # Authorship information.
-new_lib_name = "new_lib_name"
-author_name = "author name"
+new_lib_name = "ostfic"
+author_name = "Matthew Fitzpatrick"
 copyright_year = "2020"
-email = "emailaddress@domain.com"
+email = "mfitzpatrick@dwavesys.com"
 
 # One-line description of library.
-lib_description = "Insert library description here."
+lib_description = "For simulating open-system dynamics of quantum Ising chains."
 
 
 
@@ -56,7 +56,10 @@ try:
                     ignore = shutil.ignore_patterns(".git",
                                                     "gencopy.py",
                                                     "__pycache__",
-                                                    "_build"))
+                                                    "_build",
+                                                    "*~",
+                                                    "*.pyc",
+                                                    "docs/reference"))
 
     os.rename(dirname_of_new_repo + "/libtemplate",
               dirname_of_new_repo + "/" + new_lib_name)
@@ -89,7 +92,6 @@ try:
 
     # Insert placeholder values.
     for filename in filenames:
-        print(filename)
         with open(filename, "r") as f:
             lines = f.readlines()
             num_lines = len(lines)
@@ -113,15 +115,28 @@ try:
                     line = line.replace("libtemplate",
                                         new_lib_name)
                 if "docs/license.rst" in filename:
-                    lines[1] = "=" * (len(line)-3)
-                    
-                    
-                lines[i] = line
+                    if i == 0:
+                        lines[0] = line
+                    if i == 1:
+                        lines[1] = "=" * (len(new_lib_name) + 15) + "\n"
+                    elif i == 9:
+                        lines[9] = ("The source code documented here is "
+                                    "published under a [INSERT LICENSE TYPE]"
+                                    "\n")
+                    elif i == 10:
+                        lines[10] = ("license, which we include below.\n")
+                elif ("docs/reference.rst" in filename) and (i == 1):
+                    lines[1] = "=" * (len(new_lib_name) + 10) + "\n"
+                else:
+                    lines[i] = line
             
         with open(filename, "w") as f:
-            new_file_content = ""
-            for line in lines:
-                new_file_content += line
+            if new_lib_name + "/LICENSE" in filename:
+                new_file_content = "Insert license here."
+            else:
+                new_file_content = ""
+                for line in lines:
+                    new_file_content += line
             f.write(new_file_content)
     
 except FileExistsError:

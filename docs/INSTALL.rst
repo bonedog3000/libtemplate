@@ -20,7 +20,11 @@ by issuing the following command::
 
     pip install .
 
-Note that you must include the period as well.
+Note that you must include the period as well. The installation will generate
+some directories that can be safely remove to clean up the repository. To
+remove these directories, issue the following command::
+
+    python setup.py clean
 
 Installation using pip only
 ---------------------------
@@ -35,7 +39,11 @@ by issuing the following command::
 
     pip install .
 
-Note that you must include the period as well.
+Note that you must include the period as well. The installation will generate
+some directories that can be safely remove to clean up the repository. To
+remove these directories, issue the following command::
+
+    python setup.py clean
 
 Update libtemplate
 ------------------
@@ -56,8 +64,14 @@ Generating documention files
 ----------------------------
 
 To generate documentation in html format from source files you will also need
-the sphinx and numpydoc pacakges. These can be installed by typing at the root
-directory::
+the sphinx and numpydoc packages. If you installed ``libtemplate`` within a
+conda virtual environment, then you can install the aforementioned packages by
+typing at the root directory::
+
+    conda install --file requirements-doc.txt
+
+Otherwise, if you installed ``libtemplate`` using pip only, then type at the
+root directory::
 
     pip install -r requirements-doc.txt
 

@@ -21,10 +21,10 @@ import shutil
 ############################
 
 __author__     = "Matthew Fitzpatrick"
-__copyright__  = "Copyright 2021"
+__copyright__  = "Copyright 2020"
 __credits__    = ["Matthew Fitzpatrick"]
 __maintainer__ = "Matthew Fitzpatrick"
-__email__      = "mfitzpatrick@dwavesys.ca"
+__email__      = "mrfitzpa@sfu.ca"
 __status__     = "Development"
 
 
@@ -34,13 +34,13 @@ __status__     = "Development"
 ###########################
 
 # Authorship information.
-new_lib_name = "rfsquidkit"
-author_name = "Matthew Fitzpatrick"
-copyright_year = "2021"
-email = "mfitzpatrick@dwavesys.ca"
+new_lib_name = "some_lib_name"
+author_name = "John Smith"
+copyright_year = "2020"
+email = "jsmith@domain.com"
 
 # One-line description of library.
-lib_description = ("For modelling networks of rf-SQUIDs.")
+lib_description = "Insert one-line description of library here."
 
 
 

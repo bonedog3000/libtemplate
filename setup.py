@@ -20,6 +20,9 @@ import subprocess
 
 
 
+# To check whether a package has been installed already.
+from pkg_resources import DistributionNotFound, get_distribution
+
 # For setting up libtemplate package.
 from setuptools import setup, find_packages, Command
 
@@ -208,6 +211,55 @@ def read_extra_requirements():
 
 
 
+def not_installed(pkg_name):
+    r"""Check whether package has been installed.
+
+    Parameters
+    ----------
+    pkg_name : `str`
+        The name of the package.
+
+    Returns
+    -------
+    result : `bool`
+        Set to ``False`` if the package has already been installed. Otherwise, 
+        it is set to ``True``.
+    """
+    try:
+        get_distribution(pkg_name)
+        result = False
+    except DistributionNotFound:
+        result = True
+
+    return result
+
+
+
+def gen_minimal_requirements():
+    r"""Generate the minimal list of required packages.
+
+    Parameters
+    ----------
+
+    Returns
+    -------
+    minimal_requirements : `array_like` ('str`, ndim=1)
+        The minimal list of required packages.
+    """
+    minimal_requirements = []
+
+    if not_installed("numpy"):
+        minimal_requirements.append("numpy")
+
+    # Uncomment the below if-statement if scipy is required to install your
+    # library.
+    # if not_installed("scipy"):
+    #     minimal_requirements.append("scipy")
+
+    return minimal_requirements
+
+
+
 class CleanCommand(Command):
     """Custom clean command to tidy up the project root."""
     user_options = []
@@ -240,6 +292,8 @@ def setup_package():
     extras_require = read_extra_requirements()
 
     setup_requires = ['setuptools>=30.3.0']
+    install_requires = gen_minimal_requirements()
+    extras_require = read_extra_requirements()
 
     description = ("library-description-placeholder")
 
@@ -250,7 +304,7 @@ def setup_package():
           packages=find_packages(),
           version=full_version,
           setup_requires=setup_requires,
-          install_requires=read_requirements_file('requirements.txt'),
+          install_requires=install_requires,
           extras_require=extras_require,
           cmdclass={'clean': CleanCommand})
 

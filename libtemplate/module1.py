@@ -1,5 +1,8 @@
-#!/usr/bin/env python
 """Insert a one-line description of module.
+
+A more detailed description of the module. The more detailed description can
+span multiple lines.
+
 """
 
 
@@ -34,7 +37,7 @@ import numpy as np
 
 # Importing a module from within this library. Notice the triple new-line
 # spacing between module/package groups.
-from libtemplate.subpackage import module2
+import libtemplate.subpackage.module2
 
 
 
@@ -55,7 +58,7 @@ __status__     = "Development"
 ## Define classes and functions ##
 ##################################
 
-# List of public objects in objects.
+# List of public objects in module.
 __all__ = ["Rectangle", "scale_rectangle"]
 
 
@@ -67,7 +70,7 @@ class Rectangle():
     span multiple lines. In this particular example, we define a class that is
     suppose to represent a rectangle.
 
-    It is a standard naming convention to start class names with captial 
+    It is a standard naming convention to start class names with captial
     letters. Avoid using underscores.
 
     Parameters
@@ -92,11 +95,18 @@ class Rectangle():
         be the same as the class construction paramters.
     width : `float`
         A description of the second class attribute, named ``width`` in this
-        this example. 
+        this example.
+
     """
     def __init__(self, length, width=None):
         self.length = length
-        self.width = width if width!=None else length
+        self.width = width if (width is not None) else length
+
+        try:
+            if (self.length <= 0) or (self.width <= 0):
+                raise ValueError(_rectangle_err_msg_1)
+        except:
+            raise TypeError(_rectangle_err_msg_1)
 
         # It's good practice to always have a return statement at the end of
         # any function/method, even if the function/method isn't suppose to
@@ -132,7 +142,7 @@ class Rectangle():
 def scale_rectangle(rectangle, scale):
     r"""A one-line description of the function.
 
-    A more detailed description of the function. The more detailed description 
+    A more detailed description of the function. The more detailed description
     can span multiple lines. In this particular example, we define a function
     that scales a given rectangle by a given scaling factor. Note that this
     function does not alter the attributes of the original rectangle but creates
@@ -162,13 +172,39 @@ def scale_rectangle(rectangle, scale):
         A description of the object returned by the function, named 
         ``scaled_rectangle`` in this example. This object represents the scaled
         rectangle.
+
     """
     scaled_rectangle = copy.deepcopy(rectangle)  # Performs a deep copy.
 
-    # We imported `module2` from another subpackage in this library.
-    module2.say_something("Scaling the rectangle...")
-    
-    scaled_rectangle.length *= scale
-    scaled_rectangle.width *=scale
+    # We imported `libtemplate.subpackage.module2` from another subpackage in
+    # this library.
+    libtemplate.subpackage.module2.say_something("Scaling the rectangle...")
+
+    try:
+        if scale <= 0:
+            raise ValueError(_scale_rectangle_err_msg_1)
+    except:
+        raise TypeError(_scale_rectangle_err_msg_1)
+
+    try:
+        scaled_rectangle.length *= scale
+        scaled_rectangle.width *= scale
+    except:
+        raise TypeError(_scale_rectangle_err_msg_2)
 
     return scaled_rectangle
+
+
+
+###########################
+## Define error messages ##
+###########################
+
+_rectangle_err_msg_1 = \
+    ("The objects ``length`` and ``width`` must be positive real numbers.")
+
+_scale_rectangle_err_msg_1 = \
+    ("The object ``scale`` must be a positive real number.")
+_scale_rectangle_err_msg_2 = \
+    ("The object ``rectangle`` must be an instance of the class"
+     "`libtemplate.module1.Rectangle`.")

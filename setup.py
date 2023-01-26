@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """The setup script for the ``libtemplate`` library.
 """
 
@@ -17,6 +16,9 @@ import os
 
 # To run git commands and retrieve corresponding output.
 import subprocess
+
+# For determining the machine architecture.
+import platform
 
 
 
@@ -202,7 +204,10 @@ def read_extra_requirements():
     extra_requirements : `dict` [`str`, array_like(`str`, ndim=1)]
         Extracted set of library requirements.
     """
-    extra_requirements = {'doc': read_requirements_file('requirements-doc.txt')}
+    extra_requirements = \
+        {'doc': read_requirements_file('requirements-doc.txt'),
+         'examples': read_requirements_file('requirements-examples.txt')}
+    
     extra_requirements['all'] = [requirement for requirement_subset
                                  in extra_requirements.values()
                                  for requirement in requirement_subset]
@@ -246,17 +251,32 @@ def gen_minimal_requirements():
     minimal_requirements : `array_like` ('str`, ndim=1)
         The minimal list of required packages.
     """
+    pkg_names = read_requirements_file('requirements.txt')
+    
     minimal_requirements = []
-
-    if not_installed("numpy"):
-        minimal_requirements.append("numpy")
-
-    # Uncomment the below if-statement if scipy is required to install your
-    # library.
-    # if not_installed("scipy"):
-    #     minimal_requirements.append("scipy")
-
+    for pkg_name in pkg_names:
+        try:
+            get_distribution(pkg_name)
+        except DistributionNotFound:
+            minimal_requirements.append(pkg_name)
+        
     return minimal_requirements
+
+
+
+def clean():
+    if sys.platform.startswith("win"):
+        os.system("rmdir /s /q ./build")
+        os.system("rmdir /s /q ./dist")
+        os.system("rmdir /s /q ./embeam.egg-info")
+        os.system("del /q ./*.pyc")
+        os.system("del /q ./*.tgz")
+        os.system("del /q ./embeam/_version.py")
+    else:
+        os.system("rm -vrf ./build ./dist ./*.pyc "
+                  "./*.tgz ./*.egg-info ./embeam/_version.py")
+
+    return None
 
 
 
@@ -268,8 +288,7 @@ class CleanCommand(Command):
     def finalize_options(self):
         pass
     def run(self):
-        os.system("rm -vrf ./build ./dist ./*.pyc "
-                  "./*.tgz ./*.egg-info ./libtemplate/_version.py")
+        clean()
 
 
 
@@ -289,9 +308,7 @@ def setup_package():
     full_version, git_revision = get_version_info()
     write__version_py(full_version, git_revision)
 
-    extras_require = read_extra_requirements()
-
-    setup_requires = ['setuptools>=30.3.0']
+    setup_requires = ['setuptools']
     install_requires = gen_minimal_requirements()
     extras_require = read_extra_requirements()
 
@@ -312,3 +329,4 @@ def setup_package():
     
 if __name__ == "__main__":
     setup_package()
+    clean()

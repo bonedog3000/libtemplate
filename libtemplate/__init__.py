@@ -1,8 +1,8 @@
-#!/usr/bin/env python
-"""``libtemplate`` (short for 'Library Template') is a Python library that 
-should be used as a template to build one's own library, as the name suggests. 
-In this file you should provide a brief description of whatever library you 
+"""``libtemplate`` (short for 'Library Template') is a Python library that
+should be used as a template to build one's own library, as the name suggests.
+In this file you should provide a brief description of whatever library you
 decide to create out of this template.
+
 """
 
 
@@ -11,12 +11,10 @@ decide to create out of this template.
 ## Load libraries/packages/modules ##
 #####################################
 
-# Load subpackages.
-from . import subpackage
-
-# Load modules.
-from . import module1
-from . import version
+# Import child modules and packages of current package.
+import libtemplate.module1
+import libtemplate.subpackage
+import libtemplate.version
 
 
 
@@ -48,15 +46,22 @@ __all__ = ["subpackage",
 
 
 def show_config():
-    """Print information about the version of ``libtemplate`` and 
-    libraries it uses.
+    """Print information about the version of ``libtemplate`` and libraries it 
+    uses.
 
     Parameters
     ----------
 
     Returns
     -------
+
     """
     print(version.version_summary)
 
     return None
+
+
+
+###########################
+## Define error messages ##
+###########################

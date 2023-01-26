@@ -1,2 +1,5 @@
-Sphinx>=2
+sphinx
+sphinx_rtd_theme
+sphinx-autodoc-typehints
 numpydoc
+docutils==0.16

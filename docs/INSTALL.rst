@@ -1,105 +1,110 @@
+.. _installation_instructions_sec:
+
 Installation instructions
 =========================
 
-Insert instructions for installing, updating, and installing your library.
+Install libtemplate
+-------------------
 
-Below we provide such instructions for the ``libtemplate`` library. We also
-include instructions for installing the necessary packages for generating
-library documentation files.
+First, open up the appropriate command line interface. On Unix-based systems,
+you would open a terminal. On Windows systems you would open an Anaconda Prompt
+as an administrator.
 
-Installation using conda and pip
---------------------------------
+Next, assuming that you have downloaded/cloned the ``libtemplate`` git
+repository, change into the root of said repository, and run the following
+command::
 
-First, install required packages by issuing the following command in the
-terminal::
+  pip install .
 
-    conda install --file requirements.txt
+Note that you must include the period as well. The above command executes a
+standard installation of ``libtemplate``. Upon completing the standard
+installation of ``libtemplate``, a set of libraries should be installed
+including ``numpy``, and ``pytest``.
 
-Once you have installed the required packages, you can install ``libtemplate``
-by issuing the following command::
+Optionally, for additional features in ``libtemplate``, one can install
+additional dependencies upon installing ``libtemplate``. To install a subset of
+additional dependencies, run the following command from the root of the
+repository::
 
-    pip install .
+  pip install .[<selector>]
 
-Note that you must include the period as well. The installation will generate
-some directories that can be safely remove to clean up the repository. To
-remove these directories, issue the following command::
+where ``<selector>`` can be one of the following:
 
-    python setup.py clean
-
-Installation using pip only
----------------------------
-
-First, install required packages by issuing the following command in the
-terminal::
-  
-    pip install -r requirements.txt
-
-Once you have installed the required packages, you can install ``libtemplate``
-by issuing the following command::
-
-    pip install .
-
-Note that you must include the period as well. The installation will generate
-some directories that can be safely remove to clean up the repository. To
-remove these directories, issue the following command::
-
-    python setup.py clean
+* ``doc``: to install the dependencies necessary for documentation generation;
+* ``examples``: to install the dependencies necessary for running any example
+  scripts;
+* ``all``: to install all additional dependencies.
 
 Update libtemplate
 ------------------
 
-If you, or someone else has made changes to this library, you can reinstall by
-issuing the following command::
+If you, or someone else has made changes to this library, you can reinstall it
+by issuing the following command from the root of the repository::
   
     pip install .
+
+or the command::
+
+  pip install .[<selector>]
+
+where ``<selector>`` was described in the previous section.
 
 Uninstall libtemplate
 ---------------------
 
-To uninstall ``libtemplate``, all you need to type is::
+To uninstall ``libtemplate``, run the following command from the root of the
+repository::
 
-    pip uninstall libtemplate
+  pip uninstall libtemplate
+
+Exploring examples of using libtemplate
+---------------------------------------
+
+Examples of using ``libtemplate`` can be found in the directory
+``<root>/examples``, where ``<root>`` is the root of the repository. The
+dependencies required for running these example can be installed by running the
+following command from the root of the repository::
+
+  pip install .[examples]
+
+or the command::
+
+  pip install .[all]
+
+Note that the latter command will install all extra dependencies of
+``libtemplate``.
 
 Generating documention files
 ----------------------------
 
-To generate documentation in html format from source files you will also need
-the sphinx and numpydoc packages. If you installed ``libtemplate`` within a
-conda virtual environment, then you can install the aforementioned packages by
-typing at the root directory::
+To generate documentation in html format from source files, you will also need
+to install several other packages. This can be done by running the following
+command from the root of the repository::
 
-    conda install --file requirements-doc.txt
+  pip install .[doc]
 
-Otherwise, if you installed ``libtemplate`` using pip only, then type at the
-root directory::
+or the command::
 
-    pip install -r requirements-doc.txt
+  pip install .[all]
 
-Then, assuming you are in the root directory of ``libtemplate`` and that
-``libtemplate`` is already installed, issue the following commands to generate
-html documentation files::
+Note that the latter command will install all extra dependencies of
+``libtemplate``.
 
-    cd docs
-    make html
+Next, assuming that you are in the root of the repository, that you have
+installed all the prerequisite packages, and that ``libtemplate`` has been
+installed, you can generate the ``libtemplate`` documentation html files by
+issuing the following commands within your virtual environment::
+
+  cd docs
+  make html
 
 This will generate a set of html files in ``./_build/html`` containing the
 documentation of ``libtemplate``. You can then open any of the files using your
-favorite web browser to start navigating the documentation within said browser::
-
-    firefox ./_build/html/index.html &>/dev/null &
+favorite web browser.
 
 If ``libtemplate`` has been updated, the documentation has most likely changed
-as well. To update the documentation, first remove the ``reference`` directory
-inside ``docs``::
+as well. To update the documentation simply run::
 
-    rm -r reference
+  make html
 
-and then issue the following command::
-
-    make clean
-
-Now that we have cleaned everything up, we can simply run::
-
-    make html
-
-to generate the new documentation.
+again to generate the new documentation.

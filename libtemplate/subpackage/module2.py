@@ -1,5 +1,8 @@
-#!/usr/bin/env python
 """Insert a one-line description of module.
+
+A more detailed description of the module. The more detailed description can
+span multiple lines.
+
 """
 
 
@@ -32,7 +35,6 @@ import numpy as np
 # Here one would normally put the local module/package imports. However we don't
 # import any in this module so we simply leave it blank. Notice the triple
 # new-line spacing between module/package groups.
-from libtemplate.subpackage import module2
 
 
 
@@ -53,7 +55,7 @@ __status__     = "Development"
 ## Define classes and functions ##
 ##################################
 
-# List of public objects in objects.
+# List of public objects in module.
 __all__ = ["say_something"]
 
 
@@ -61,7 +63,7 @@ __all__ = ["say_something"]
 def say_something(statement):
     r"""A one-line description of the function.
 
-    A more detailed description of the function. The more detailed description 
+    A more detailed description of the function. The more detailed description
     can span multiple lines. In this particular example, we define a function
     prints a statement given by the user.
     
@@ -75,11 +77,24 @@ def say_something(statement):
 
     Returns
     -------
+
     """
-    print(statement)
+    try:
+        print(statement)
+    except:
+        raise TypeError(_say_something_err_1)
 
     # It's good practice to always have a return statement at the end of any
     # function/method, even if the function/method isn't suppose to return
     # anything. In the case that the function/method isn't suppose return
     # anything, simply return a `None` object.
     return None
+
+
+
+###########################
+## Define error messages ##
+###########################
+
+_say_something_err_1 = \
+    ("The object ``statement`` must be a `str`.")

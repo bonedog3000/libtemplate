@@ -1,3 +1,5 @@
+.. _scaling_a_rectangle_example_sec:
+
 Scaling a rectangle
 ===================
 

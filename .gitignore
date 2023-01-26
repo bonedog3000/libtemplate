@@ -4,14 +4,22 @@
 # Ignore select directories
 __pycache__/
 .ipynb_checkpoints/
-docs/_build/
-docs/reference/
 
 # Ignore select files
 libtemplate/_version.py
+_todo.rst
 
 # Ignore .pyc files
 *.pyc
 
 # Ignore #*# files
 \#*#
+*.bak
+
+# Ignore pip install build files.
+build/
+*.egg-info/
+*/_version.py
+
+# Ignore SLURM output files.
+slurm-*.out

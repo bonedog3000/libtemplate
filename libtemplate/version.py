@@ -1,8 +1,8 @@
-#!/usr/bin/env python
 """A module for retrieving the version of this library.
 
 The version is provided in the standard python format ``major.minor.revision``
 as a string. Use ``pkg_resources.parse_version`` to compare different versions.
+
 """
 
 
@@ -39,7 +39,7 @@ __status__     = "Development"
 ## Define functions and constants ##
 ####################################
 
-# List of public objects in objects.
+# List of public objects in module.
 __all__ = ["version",
            "released",
            "short_version",
@@ -70,6 +70,7 @@ def _get_git_revision():
     -------
     revision : `str`
         Git revision hash of ``libtemplate``.
+
     """
     try:
         parsed_cmd = ['git', 'rev-parse', 'HEAD']
@@ -99,6 +100,7 @@ def _get_full_version():
     -------
     full_version : `str`
         Full version of ``libtemplate``.
+
     """
     full_version = version
     
@@ -123,6 +125,7 @@ def _get_version_summary():
     -------
     summary : `str`
         Version summary of ``libtemplate``.
+
     """
     # Check versions of libtemplate.
     from . import _version
@@ -144,3 +147,9 @@ def _get_version_summary():
 
 # Summary of the versions as a string.
 version_summary = _get_version_summary()
+
+
+
+###########################
+## Define error messages ##
+###########################

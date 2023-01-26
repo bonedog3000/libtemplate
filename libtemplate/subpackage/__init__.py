@@ -1,12 +1,8 @@
-#!/usr/bin/env python
 """A one-line description of the subpackage.
 
-.. rubric:: Submodules
+A more detailed description of the subpackage. The more detailed description can
+span multiple lines.
 
-.. autosummary::
-    :toctree: .
-
-    module2
 """
 
 
@@ -16,10 +12,7 @@
 #####################################
 
 # Import submodules of subpackage.
-from . import module2
-
-# List of public objects in subpackage.
-__all__ = ["module2"]
+import libtemplate.subpackage.module2
 
 
 
@@ -33,3 +26,18 @@ __credits__    = ["author-placeholder"]
 __maintainer__ = "author-placeholder"
 __email__      = "email-placeholder"
 __status__     = "Development"
+
+
+
+##################################
+## Define classes and functions ##
+##################################
+
+# List of public objects in subpackage.
+__all__ = ["module2"]
+
+
+
+###########################
+## Define error messages ##
+###########################

@@ -44,11 +44,6 @@ author = 'author-placeholder'
 
 # -- General configuration ---------------------------------------------------
 
-# If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '2.0'
-
-
-
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -61,6 +56,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'sphinx_autodoc_typehints',
     'sphinx.ext.githubpages',
     'numpydoc',
 ]
@@ -69,46 +65,6 @@ extensions = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-
-
-
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-source_suffix = '.rst'
-
-
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-
-
-# The master toctree document.
-master_doc = 'index'
-
-
-
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-
-# The short X.Y version.
-version = libtemplate.__version__
-# The full version, including alpha/beta/rc tags.
-release = libtemplate.__version__
-
-
-
-# The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
-
-
-
-# default options for autodoc
-autodoc_default_options = {}
-autodoc_member_order = 'bysource'
 
 
 
@@ -121,17 +77,44 @@ numpydoc_class_members_toctree = False
 
 
 autosummary_generate = True
+autoclass_content = "both"
+html_show_sourcelink = False
+autodoc_inherit_docstrings = True
+set_type_checking_flag = True
+add_module_names = False
 
 
 
+# For equation numbering by section.
+numfig = True
+math_numfig = True
+numfig_secnum_depth = 6
+
+
+
+# cross links to other sphinx documentations
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
+    'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None)}
+
+
+
+# extlinks
+extlinks = {'arxiv': ('https://arxiv.org/abs/%s', None),
+            'doi': ('https://dx.doi.org/%s', None)}
 
 
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-html_theme = 'default'
+# Choose the 'read-the-docs' theme if available.
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
+if not on_rtd:
+    import sphinx_rtd_theme
+    html_theme = "sphinx_rtd_theme"
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_css_files = ["readthedocs-custom.css"] # Override some CSS settings.
 
 
 
@@ -145,82 +128,3 @@ html_static_path = ['_static']
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 html_last_updated_fmt = '%b %d, %Y'
-
-
-
-
-# Custom sidebar templates, maps document names to template names.
-html_sidebars = {'**': ['localtoc.html',
-                        'relations.html',
-                        'searchbox.html',
-                        'globaltoc.html'],}
-
-
-
-# -- Options for HTMLHelp output ------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'libtemplatedoc'
-
-
-
-
-
-
-# -- Extension configuration -------------------------------------------------
-
-# -- Options for LaTeX output ---------------------------------------------
-
-latex_elements = {}
-
-
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [(master_doc,
-                    'libtemplate.tex',
-                    'libtemplate Documentation',
-                    author,
-                    'manual'),]
-
-
-
-# -- Options for manual page output ---------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [(master_doc,
-              'libtemplate',
-              'libtemplate Documentation',
-              [author],
-              1)]
-
-
-
-# -- Options for Texinfo output -------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [('index',
-                      'libtemplate',
-                      'libtemplate Documentation',
-                      author,
-                      'libtemplate',
-                      'library-description-placeholder',
-                      'Miscellaneous'),]
-
-
-
-# cross links to other sphinx documentations
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
-    'numpy': ('https://docs.scipy.org/doc/numpy', None),
-    'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),}
-
-
-
-# extlinks
-extlinks = {'arxiv': ('https://arxiv.org/abs/%s', 'arXiv:'),
-            'doi': ('https://dx.doi.org/%s', 'doi:')}

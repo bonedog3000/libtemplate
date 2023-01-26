@@ -1,10 +1,10 @@
-#!/usr/bin/env python
 """A one-line description of the script example.
 
 A more detailed description of the script example. This can span multiple lines.
-One suggestion would be to provide a brief outline of what the script does.
-In this script, we create a rectangle, and then create another rectangle that
-is twice the size of the first.
+One suggestion would be to provide a brief outline of what the script does.  In
+this script, we create a rectangle, and then create another rectangle that is
+twice the size of the first.
+
 """
 
 
@@ -16,7 +16,7 @@ is twice the size of the first.
 # Note: It is standard practice to import libraries/modules/packages in a
 # particular order. You should import all modules/packages from the Python's
 # standard library first. Then you should import third party modules/packages
-# e.g. numpy.Then you should import local modules/packages, presumably
+# e.g. scipy. Then you should import local modules/packages, presumably
 # developed by the user. Note the increased spacing between module/package
 # groups. Feel free to remove this note from your own library once the
 # convention is understood.
@@ -33,7 +33,7 @@ import copy
 
 # For general array handling (third party). We don't actually use this module.
 # It is included here to illustrate the import convention.
-import numpy as np
+import scipy
 
 
 

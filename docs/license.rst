@@ -1,9 +1,3 @@
-libtemplate developer team
-==========================
-
-.. include:: ../AUTHORS.txt
-    :literal:
-
 License
 =======
 

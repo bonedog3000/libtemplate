@@ -6,10 +6,15 @@
 
 
 
+# Project information
+
+project = 'libtemplate'
+copyright = 'copyright-year-placeholder, author-placeholder'
+author = 'author-placeholder'
 
 
 
-# -- Path setup --------------------------------------------------------------
+# Path setup
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -19,30 +24,16 @@ import sys
 
 
 
-# Check to see whether libtemplate can be imported.
+# Check to see whether ``libtemplate`` can be imported.
 try:
     import libtemplate.version
 except:
-    print("ERROR: can't import libtemplate.")
+    print("ERROR: can't import ``{}``.".format(project))
     sys.exit(1)
 
 
-
-
-
-
-# -- Project information -----------------------------------------------------
-
-project = 'libtemplate'
-copyright = 'copyright-year-placeholder, author-placeholder'
-author = 'author-placeholder'
-
-
-
-
-
-
-# -- General configuration ---------------------------------------------------
+    
+# General configuration
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -92,7 +83,7 @@ numfig_secnum_depth = 6
 
 
 
-# cross links to other sphinx documentations
+# Cross links to other sphinx documentations
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
     'numpy': ('https://docs.scipy.org/doc/numpy/', None),
@@ -100,13 +91,13 @@ intersphinx_mapping = {
 
 
 
-# extlinks
+# Extlinks
 extlinks = {'arxiv': ('https://arxiv.org/abs/%s', None),
             'doi': ('https://dx.doi.org/%s', None)}
 
 
 
-# -- Options for HTML output -------------------------------------------------
+# Options for HTML output
 
 # Choose the 'read-the-docs' theme if available.
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"

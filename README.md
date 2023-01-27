@@ -33,20 +33,18 @@ package.
 
 ## Note #3: Copy `libtemplate` repo to start your own library
 
-To start your own library using `libtemplate` as the template, open up the file
-`gencopy.py` in the root directory of the `libtemplate` repository, edit the
-variables `new_lib_name_for_imports`, `new_lib_name_for_docs`, `author_name`,
-`copyright_year`, `email`, and `lib_description`, and then run the script::
+To start your own library using `libtemplate` as the template, copy the file
+`<root>/gencopy_template.py` to `<root>/gencopy.py`, where `<root>` is the root
+of the `libtemplate` repository. Then open up the file `<root>/gencopy.py`; edit
+the variables `new_lib_name_for_imports`, `new_lib_name_for_docs`,
+`author_name`, `copyright_year`, `email`, `lib_description`,
+`path_to_new_repo_root`, and `target_git_platform`; and then run the following
+command from the root of the repository:
 
     python gencopy.py
 
-The script will copy the `libtemplate` repository into a new directory up one
-level from the root of the `libtemplate` repository. The new directory will have
-the same name as that specified in the variable
-`new_lib_name_for_imports`. Moreover, the script will replace all library name,
-author name, copyright year, email, and library description placeholders by the
-strings stored in `new_lib_name_for_imports`, `author_name`, `copyright_year`,
-`email`, and `lib_description` respectively. The only exception is that the
-library name is not replaced in any of the files stored in the directory
-`libtemplate` (relative to the repository root), or the files `README.rst` and
-`INSTALL.rst`.
+The script will copy the `libtemplate` repository to the path specified by
+`path_to_new_repo_root`, with all library name, author name, copyright year,
+email, and library description placeholders replaced by the strings stored in
+`new_lib_name_for_imports`, `author_name`, `copyright_year`, `email`, and
+`lib_description` respectively.

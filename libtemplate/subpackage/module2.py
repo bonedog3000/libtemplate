@@ -73,7 +73,7 @@ def say_something(statement):
         A description of the first (and only) function argument, named
         ``statement`` in this example. The user is expected to pass an object
         of type `str`, i.e. a string. The function will print the string
-        `statement`.
+        ``statement``.
 
     Returns
     -------

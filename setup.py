@@ -1,4 +1,5 @@
 """The setup script for the ``libtemplate`` library.
+
 """
 
 
@@ -20,12 +21,15 @@ import subprocess
 # For determining the machine architecture.
 import platform
 
+# For enforcing character limits for lines of texts.
+import textwrap
+
 
 
 # To check whether a package has been installed already.
 from pkg_resources import DistributionNotFound, get_distribution
 
-# For setting up libtemplate package.
+# For setting up target package.
 from setuptools import setup, find_packages, Command
 
 
@@ -47,12 +51,14 @@ __status__     = "Development"
 ## Define functions and constants ##
 ####################################
 
+target_pkg_name = "libtemplate"
+
 major_python_revision = 3
 minimum_minor_python_revision = 0
 minimum_python_version = (major_python_revision, minimum_minor_python_revision)
 
 if not sys.version_info >= minimum_python_version:
-    print("ERROR: libtemplate requires Python version >= ",
+    print("ERROR: ``{}`` requires Python version >= ".format(target_pkg_name),
           major_python_revision, ".", minimum_minor_python_revision,
           ", the script got called by:\n", sys.version, ".", sep="")
     sys.exit(1)
@@ -78,6 +84,7 @@ def get_git_revision():
     -------
     revision : `str`
         Git revision hash of ``libtemplate``.
+
     """
     if not os.path.exists('.git'):
         revision = "unknown"
@@ -109,6 +116,7 @@ def get_version_info():
     -------
     full_version : `str`
         Full version of ``libtemplate``.
+
     """
     full_version = VERSION
     git_revision = get_git_revision()
@@ -121,7 +129,7 @@ def get_version_info():
 
 def write__version_py(full_version,
                       git_revision,
-                      filename="libtemplate/_version.py"):
+                      filename=target_pkg_name+"/_version.py"):
     """Write the version during compilation to file.
 
     Parameters
@@ -131,34 +139,47 @@ def write__version_py(full_version,
     git_revision : `str`
         Git revision hash of ``libtemplate``.
     filename : `str`, optional
-        Filename of file containing information about the version of 
-        ``libtemplate`` currently being compiled.
+        Filename of file containing information about the version currently 
+        being compiled.
 
     Returns
     -------
+
     """
-    content = ("#!/usr/bin/env python\n"
-               + "# This file was generated from setup.py. It contains "
-               + "information about the\n# version of libtemplate currently "
-               + "installed on machine.\n\n\n\n"
-               + "############################\n"
-               + "## Authorship information ##\n"
-               + "############################\n\n"
-               + "__author__     = \"author-placeholder\"\n"
-               + "__copyright__  = \"Copyright copyright-year-placeholder\"\n"
-               + "__credits__    = [\"author-placeholder\"]\n"
-               + "__maintainer__ = \"author-placeholder\"\n"
-               + "__email__      = \"email-placeholder\"\n"
-               + "__status__     = \"Development\"\n\n\n\n"
-               + "#########################\n"
-               + "## Version information ##\n"
-               + "#########################\n\n"
-               + "version = '{version!s}'\n"
-               + "short_version = 'v' + version\n"
-               + "released = {released!s}\n"
-               + "full_version = '{full_version!s}'\n"
-               + "git_revision = '{git_revision!s}'\n")
+    line = ("This file was generated from setup.py. It contains information "
+            "about the version of ``{}`` currently installed on "
+            "machine.".format(target_pkg_name))
+    lines = textwrap.wrap(line, width=78, break_long_words=False)
+    for line_idx, line in enumerate(lines):
+        lines[line_idx] = "# " + line
         
+    lines += ["",
+              "",
+              "",
+              "############################",
+              "## Authorship information ##",
+              "############################",
+              "",
+              "__author__     = \"author-placeholder\"",
+              "__copyright__  = \"Copyright copyright-year-placeholder\"",
+              "__credits__    = [\"author-placeholder\"]",
+              "__maintainer__ = \"author-placeholder\"",
+              "__email__      = \"email-placeholder\"",
+              "__status__     = \"Development\"",
+              "",
+              "",
+              "",
+              "#########################",
+              "## Version information ##",
+              "#########################",
+              "",
+              "version = '{version!s}'",
+              "short_version = 'v' + version",
+              "released = {released!s}",
+              "full_version = '{full_version!s}'",
+              "git_revision = '{git_revision!s}'"]
+    
+    content = "\n".join(lines)
     content = content.format(version=VERSION,
                              full_version=full_version,
                              released=RELEASED,
@@ -314,7 +335,7 @@ def setup_package():
 
     description = ("library-description-placeholder")
 
-    setup(name="libtemplate",
+    setup(name=target_pkg_name,
           description=description,
           author="author-placeholder",
           author_email="email-placeholder",

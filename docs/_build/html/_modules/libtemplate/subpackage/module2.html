@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libtemplate.subpackage.module2 &mdash; libtemplate  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> libtemplate
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../INSTALL.html">1. Installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/libtemplate.html">2. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../literature.html">4. Literature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">5. To-Do list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">6. CHANGELOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">7. License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">libtemplate</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../../libtemplate.html">libtemplate</a></li>
+      <li class="breadcrumb-item active">libtemplate.subpackage.module2</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for libtemplate.subpackage.module2</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Insert a one-line description of module.</span>
+
+<span class="sd">A more detailed description of the module. The more detailed description can</span>
+<span class="sd">span multiple lines.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+<span class="c1">#####################################</span>
+<span class="c1">## Load libraries/packages/modules ##</span>
+<span class="c1">#####################################</span>
+
+<span class="c1"># Note: It is standard practice to import libraries/modules/packages in a</span>
+<span class="c1"># particular order. You should import all modules/packages from the Python&#39;s</span>
+<span class="c1"># standard library first. Then you should import third party modules/packages</span>
+<span class="c1"># e.g. numpy.Then you should import local modules/packages, presumably</span>
+<span class="c1"># developed by the user. Note the increased spacing between module/package</span>
+<span class="c1"># groups. Feel free to remove this note from your own library once the</span>
+<span class="c1"># convention is understood.</span>
+
+<span class="c1"># For getting filename and directory paths (from standard library). We don&#39;t</span>
+<span class="c1"># actually use this module. It is included here to illustrate the import</span>
+<span class="c1"># convention.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+
+<span class="c1"># For general array handling (third party). We don&#39;t actually use this module.</span>
+<span class="c1"># It is included here to illustrate the import convention.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+
+<span class="c1"># Here one would normally put the local module/package imports. However we don&#39;t</span>
+<span class="c1"># import any in this module so we simply leave it blank. Notice the triple</span>
+<span class="c1"># new-line spacing between module/package groups.</span>
+
+
+
+<span class="c1">############################</span>
+<span class="c1">## Authorship information ##</span>
+<span class="c1">############################</span>
+
+<span class="n">__author__</span>     <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
+<span class="n">__copyright__</span>  <span class="o">=</span> <span class="s2">&quot;Copyright copyright-year-placeholder&quot;</span>
+<span class="n">__credits__</span>    <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;author-placeholder&quot;</span><span class="p">]</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
+<span class="n">__email__</span>      <span class="o">=</span> <span class="s2">&quot;email-placeholder&quot;</span>
+<span class="n">__status__</span>     <span class="o">=</span> <span class="s2">&quot;Development&quot;</span>
+
+
+
+<span class="c1">##################################</span>
+<span class="c1">## Define classes and functions ##</span>
+<span class="c1">##################################</span>
+
+<span class="c1"># List of public objects in module.</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;say_something&quot;</span><span class="p">]</span>
+
+
+
+<div class="viewcode-block" id="say_something"><a class="viewcode-back" href="../../../_autosummary/libtemplate.subpackage.module2.say_something.html#libtemplate.subpackage.module2.say_something">[docs]</a><span class="k">def</span> <span class="nf">say_something</span><span class="p">(</span><span class="n">statement</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A one-line description of the function.</span>
+
+<span class="sd">    A more detailed description of the function. The more detailed description</span>
+<span class="sd">    can span multiple lines. In this particular example, we define a function</span>
+<span class="sd">    prints a statement given by the user.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    statement : `str`</span>
+<span class="sd">        A description of the first (and only) function argument, named</span>
+<span class="sd">        ``statement`` in this example. The user is expected to pass an object</span>
+<span class="sd">        of type `str`, i.e. a string. The function will print the string</span>
+<span class="sd">        ``statement``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">statement</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">_say_something_err_1</span><span class="p">)</span>
+
+    <span class="c1"># It&#39;s good practice to always have a return statement at the end of any</span>
+    <span class="c1"># function/method, even if the function/method isn&#39;t suppose to return</span>
+    <span class="c1"># anything. In the case that the function/method isn&#39;t suppose return</span>
+    <span class="c1"># anything, simply return a `None` object.</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1">###########################</span>
+<span class="c1">## Define error messages ##</span>
+<span class="c1">###########################</span>
+
+<span class="n">_say_something_err_1</span> <span class="o">=</span> \
+    <span class="p">(</span><span class="s2">&quot;The object ``statement`` must be a `str`.&quot;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright copyright-year-placeholder, author-placeholder.
+      <span class="lastupdated">Last updated on Jan 27, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

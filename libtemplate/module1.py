@@ -124,9 +124,6 @@ class Rectangle():
         It is a standard naming convention to use all lowercase characters to
         name a method. Underscores are fine.
 
-        Parameters
-        ----------
-
         Returns
         -------
         area : `float`

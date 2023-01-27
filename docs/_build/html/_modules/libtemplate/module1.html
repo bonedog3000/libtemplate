@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libtemplate.module1 &mdash; libtemplate  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> libtemplate
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../INSTALL.html">1. Installation instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_autosummary/libtemplate.html">2. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../literature.html">4. Literature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">5. To-Do list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">6. CHANGELOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">7. License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">libtemplate</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../libtemplate.html">libtemplate</a></li>
+      <li class="breadcrumb-item active">libtemplate.module1</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for libtemplate.module1</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Insert a one-line description of module.</span>
+
+<span class="sd">A more detailed description of the module. The more detailed description can</span>
+<span class="sd">span multiple lines.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+<span class="c1">#####################################</span>
+<span class="c1">## Load libraries/packages/modules ##</span>
+<span class="c1">#####################################</span>
+
+<span class="c1"># Note: It is standard practice to import libraries/modules/packages in a</span>
+<span class="c1"># particular order. You should import all modules/packages from the Python&#39;s</span>
+<span class="c1"># standard library first. Then you should import third party modules/packages</span>
+<span class="c1"># e.g. numpy.Then you should import local modules/packages, presumably</span>
+<span class="c1"># developed by the user. Note the increased spacing between module/package</span>
+<span class="c1"># groups. Feel free to remove this note from your own library once the</span>
+<span class="c1"># convention is understood.</span>
+
+<span class="c1"># For getting filename and directory paths (from standard library). We don&#39;t</span>
+<span class="c1"># actually use this module. It is included here to illustrate the import</span>
+<span class="c1"># convention.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># For deep copies of objects (from standard library). </span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+
+
+<span class="c1"># For general array handling (third party). We don&#39;t actually use this module.</span>
+<span class="c1"># It is included here to illustrate the import convention.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+
+<span class="c1"># Importing a module from within this library. Notice the triple new-line</span>
+<span class="c1"># spacing between module/package groups.</span>
+<span class="kn">import</span> <span class="nn">libtemplate.subpackage.module2</span>
+
+
+
+<span class="c1">############################</span>
+<span class="c1">## Authorship information ##</span>
+<span class="c1">############################</span>
+
+<span class="n">__author__</span>     <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
+<span class="n">__copyright__</span>  <span class="o">=</span> <span class="s2">&quot;Copyright copyright-year-placeholder&quot;</span>
+<span class="n">__credits__</span>    <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;author-placeholder&quot;</span><span class="p">]</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
+<span class="n">__email__</span>      <span class="o">=</span> <span class="s2">&quot;email-placeholder&quot;</span>
+<span class="n">__status__</span>     <span class="o">=</span> <span class="s2">&quot;Development&quot;</span>
+
+
+
+<span class="c1">##################################</span>
+<span class="c1">## Define classes and functions ##</span>
+<span class="c1">##################################</span>
+
+<span class="c1"># List of public objects in module.</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="s2">&quot;scale_rectangle&quot;</span><span class="p">]</span>
+
+
+
+<div class="viewcode-block" id="Rectangle"><a class="viewcode-back" href="../../_autosummary/libtemplate.module1.Rectangle.html#libtemplate.module1.Rectangle">[docs]</a><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A one-line description of the class.</span>
+
+<span class="sd">    A more detailed description of the class. The more detailed description can</span>
+<span class="sd">    span multiple lines. In this particular example, we define a class that is</span>
+<span class="sd">    suppose to represent a rectangle.</span>
+
+<span class="sd">    It is a standard naming convention to start class names with captial</span>
+<span class="sd">    letters. Avoid using underscores.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    length : `float`</span>
+<span class="sd">        A description of the first constructor argument, named ``length`` in</span>
+<span class="sd">        this example. The user is expected to pass an object of type `float`</span>
+<span class="sd">        in place of this argument, i.e. ``length`` should be a real-valued</span>
+<span class="sd">        number. Moreover, it should also be positive.</span>
+<span class="sd">    width : `float` | `None`, optional</span>
+<span class="sd">        A description of the second constructor argument, named ``width`` in</span>
+<span class="sd">        this example. This is an optional argument, i.e. the user need not</span>
+<span class="sd">        specify this argument. If specified, the user should pass in a `float`,</span>
+<span class="sd">        otherwise this argument will be set to type `None` and then later</span>
+<span class="sd">        assigned the same value as ``length``.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    length : `float`</span>
+<span class="sd">        A description of the first class attribute, named ``length`` in this</span>
+<span class="sd">        this example. It is not always the case that the class attributes will</span>
+<span class="sd">        be the same as the class construction paramters.</span>
+<span class="sd">    width : `float`</span>
+<span class="sd">        A description of the second class attribute, named ``width`` in this</span>
+<span class="sd">        this example.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span> <span class="k">if</span> <span class="p">(</span><span class="n">width</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="k">else</span> <span class="n">length</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_rectangle_err_msg_1</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">_rectangle_err_msg_1</span><span class="p">)</span>
+
+        <span class="c1"># It&#39;s good practice to always have a return statement at the end of</span>
+        <span class="c1"># any function/method, even if the function/method isn&#39;t suppose to</span>
+        <span class="c1"># return anything. In the case that the function/method isn&#39;t suppose</span>
+        <span class="c1"># return anything, simply return a `None` object.</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Rectangle.area"><a class="viewcode-back" href="../../_autosummary/libtemplate.module1.Rectangle.html#libtemplate.module1.Rectangle.area">[docs]</a>    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A one-line description of the class method.</span>
+
+<span class="sd">        A more detailed description of the class method. The more detailed</span>
+<span class="sd">        description can span multiple lines. In this particular example, we</span>
+<span class="sd">        define a method that calculates the area of the rectangle.</span>
+
+<span class="sd">        It is a standard naming convention to use all lowercase characters to</span>
+<span class="sd">        name a method. Underscores are fine.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        area : `float`</span>
+<span class="sd">            A description of the object returned from the class method. In this</span>
+<span class="sd">            example, the method returns the area of the rectangle, as a `float`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+        <span class="k">return</span> <span class="n">area</span></div></div>
+
+
+
+<div class="viewcode-block" id="scale_rectangle"><a class="viewcode-back" href="../../_autosummary/libtemplate.module1.scale_rectangle.html#libtemplate.module1.scale_rectangle">[docs]</a><span class="k">def</span> <span class="nf">scale_rectangle</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;A one-line description of the function.</span>
+
+<span class="sd">    A more detailed description of the function. The more detailed description</span>
+<span class="sd">    can span multiple lines. In this particular example, we define a function</span>
+<span class="sd">    that scales a given rectangle by a given scaling factor. Note that this</span>
+<span class="sd">    function does not alter the attributes of the original rectangle but creates</span>
+<span class="sd">    a copy first.</span>
+
+<span class="sd">    It is a standard naming convention to use all lowercase characters to name</span>
+<span class="sd">    a function. Underscores are fine.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rectangle : :class:`libtemplate.module1.Rectangle`</span>
+<span class="sd">        A description of the first function argument, named ``rectangle`` in </span>
+<span class="sd">        this example. The user is expected to pass an object of type </span>
+<span class="sd">        :class:`libtemplate.module1.Rectangle` in place of this argument. The</span>
+<span class="sd">        function will subsequently create a copy of the </span>
+<span class="sd">        :class:`libtemplate.module1.Rectangle` object and then scale it.</span>
+<span class="sd">    scale : `float`</span>
+<span class="sd">        A description of the second function argument, named ``scale`` in this</span>
+<span class="sd">        example. The user is expected to pass an object of type `float` in </span>
+<span class="sd">        place of this argument. The function will scale the given </span>
+<span class="sd">        :class:`libtemplate.module1.Rectangle` by ``scale``. Note that ``scale``</span>
+<span class="sd">        should be a positive number.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    scaled_rectangle : :class:`libtemplate.module1.Rectangle`</span>
+<span class="sd">        A description of the object returned by the function, named </span>
+<span class="sd">        ``scaled_rectangle`` in this example. This object represents the scaled</span>
+<span class="sd">        rectangle.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">scaled_rectangle</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">rectangle</span><span class="p">)</span>  <span class="c1"># Performs a deep copy.</span>
+
+    <span class="c1"># We imported `libtemplate.subpackage.module2` from another subpackage in</span>
+    <span class="c1"># this library.</span>
+    <span class="n">libtemplate</span><span class="o">.</span><span class="n">subpackage</span><span class="o">.</span><span class="n">module2</span><span class="o">.</span><span class="n">say_something</span><span class="p">(</span><span class="s2">&quot;Scaling the rectangle...&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scale</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_scale_rectangle_err_msg_1</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">_scale_rectangle_err_msg_1</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">scaled_rectangle</span><span class="o">.</span><span class="n">length</span> <span class="o">*=</span> <span class="n">scale</span>
+        <span class="n">scaled_rectangle</span><span class="o">.</span><span class="n">width</span> <span class="o">*=</span> <span class="n">scale</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">_scale_rectangle_err_msg_2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">scaled_rectangle</span></div>
+
+
+
+<span class="c1">###########################</span>
+<span class="c1">## Define error messages ##</span>
+<span class="c1">###########################</span>
+
+<span class="n">_rectangle_err_msg_1</span> <span class="o">=</span> \
+    <span class="p">(</span><span class="s2">&quot;The objects ``length`` and ``width`` must be positive real numbers.&quot;</span><span class="p">)</span>
+
+<span class="n">_scale_rectangle_err_msg_1</span> <span class="o">=</span> \
+    <span class="p">(</span><span class="s2">&quot;The object ``scale`` must be a positive real number.&quot;</span><span class="p">)</span>
+<span class="n">_scale_rectangle_err_msg_2</span> <span class="o">=</span> \
+    <span class="p">(</span><span class="s2">&quot;The object ``rectangle`` must be an instance of the class&quot;</span>
+     <span class="s2">&quot;`libtemplate.module1.Rectangle`.&quot;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright copyright-year-placeholder, author-placeholder.
+      <span class="lastupdated">Last updated on Jan 27, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

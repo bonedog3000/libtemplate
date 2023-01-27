@@ -49,6 +49,9 @@ __all__ = ["version",
 
 
 
+# Name of package.
+pkg_name = "libtemplate"
+
 # Hard-coded version for people without git. Current non-production version.
 version = '0.1.0'
 
@@ -127,20 +130,20 @@ def _get_version_summary():
         Version summary of ``libtemplate``.
 
     """
-    # Check versions of libtemplate.
+    # Check versions of ``libtemplate``.
     from . import _version
     if _version.version != version:
-        raise ValueError("libtemplate version has changed since "
-                         "installation/compilation")
+        raise ValueError(_get_version_summary_err_msg_1)
 
 
 
     # Generate summary.
-    summary = ("libtemplate {libtemplate_ver!s};\n"
-               "git revision {git_rev!s} using\n"
-               "python {python_ver!s}")
+    summary = "libtemplate "
+    summary += ("{lib_ver!s};\n"
+                "git revision {git_rev!s} using\n"
+                "python {python_ver!s}")
     
-    summary = summary.format(libtemplate_ver=full_version,
+    summary = summary.format(lib_ver=full_version,
                              git_rev=git_revision,
                              python_ver=sys.version)
     return summary
@@ -153,3 +156,7 @@ version_summary = _get_version_summary()
 ###########################
 ## Define error messages ##
 ###########################
+
+_get_version_summary_err_msg_1 = \
+    ("``{}`` version has changed since "
+     "installation/compilation.".format(pkg_name))

@@ -295,10 +295,11 @@ def _generate_new_root_setup_py_file_contents():
         if "``{}``".format(new_lib_name_for_imports) in line:
             replacement_lines = _wrap_single_line_python_doc_string(line)
         elif "description =" in line:
-            width = 58
+            width = 57
             replacement_lines = textwrap.wrap(lib_description,
                                               width=width,
-                                              break_long_words=False)
+                                              break_long_words=False,
+                                              drop_whitespace=False)
             num_replacement_lines = len(replacement_lines)
             replacement_lines[0] = ("    description = (\""
                                     + replacement_lines[0]

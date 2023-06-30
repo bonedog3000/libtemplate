@@ -11,9 +11,7 @@ decide to create out of this template.
 ## Load libraries/packages/modules ##
 #####################################
 
-# Import child modules and packages of current package.
-import libtemplate.module1
-import libtemplate.subpackage
+# For accessing information regarding the version of ``libtemplate`` installed.
 import libtemplate.version
 
 
@@ -25,8 +23,8 @@ import libtemplate.version
 __author__       = "author-placeholder"
 __copyright__    = "Copyright copyright-year-placeholder"
 __credits__      = ["author-placeholder"]
-__version__      = version.version
-__full_version__ = version.full_version
+__version__      = libtemplate.version.version
+__full_version__ = libtemplate.version.full_version
 __maintainer__   = "author-placeholder"
 __email__        = "email-placeholder"
 __status__       = "Development"
@@ -50,7 +48,7 @@ def show_config():
     uses.
 
     """
-    print(version.version_summary)
+    print(libtemplate.version.version_summary)
 
     return None
 

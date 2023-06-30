@@ -11,9 +11,6 @@ span multiple lines.
 ## Load libraries/packages/modules ##
 #####################################
 
-# Import submodules of subpackage.
-import libtemplate.subpackage.module2
-
 
 
 ############################

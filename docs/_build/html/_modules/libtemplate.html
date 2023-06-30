@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> libtemplate
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            libtemplate
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -61,7 +65,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
       <li class="breadcrumb-item active">libtemplate</li>
       <li class="wy-breadcrumbs-aside">
@@ -86,9 +90,7 @@
 <span class="c1">## Load libraries/packages/modules ##</span>
 <span class="c1">#####################################</span>
 
-<span class="c1"># Import child modules and packages of current package.</span>
-<span class="kn">import</span> <span class="nn">libtemplate.module1</span>
-<span class="kn">import</span> <span class="nn">libtemplate.subpackage</span>
+<span class="c1"># For accessing information regarding the version of ``libtemplate`` installed.</span>
 <span class="kn">import</span> <span class="nn">libtemplate.version</span>
 
 
@@ -100,8 +102,8 @@
 <span class="n">__author__</span>       <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
 <span class="n">__copyright__</span>    <span class="o">=</span> <span class="s2">&quot;Copyright copyright-year-placeholder&quot;</span>
 <span class="n">__credits__</span>      <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;author-placeholder&quot;</span><span class="p">]</span>
-<span class="n">__version__</span>      <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">version</span>
-<span class="n">__full_version__</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">full_version</span>
+<span class="n">__version__</span>      <span class="o">=</span> <span class="n">libtemplate</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
+<span class="n">__full_version__</span> <span class="o">=</span> <span class="n">libtemplate</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">full_version</span>
 <span class="n">__maintainer__</span>   <span class="o">=</span> <span class="s2">&quot;author-placeholder&quot;</span>
 <span class="n">__email__</span>        <span class="o">=</span> <span class="s2">&quot;email-placeholder&quot;</span>
 <span class="n">__status__</span>       <span class="o">=</span> <span class="s2">&quot;Development&quot;</span>
@@ -125,7 +127,7 @@
 <span class="sd">    uses.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">version_summary</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">libtemplate</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version_summary</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="kc">None</span></div>
 
@@ -144,7 +146,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright copyright-year-placeholder, author-placeholder.
-      <span class="lastupdated">Last updated on Jan 27, 2023.
+      <span class="lastupdated">Last updated on Jun 30, 2023.
       </span></p>
   </div>
 

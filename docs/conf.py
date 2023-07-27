@@ -99,7 +99,7 @@ extlinks = {"arxiv": ("https://arxiv.org/abs/%s", None),
 
 # Options for HTML output
 
-# Choose the 'read-the-docs' theme if available.
+# Choose the "read-the-docs" theme if available.
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 if not on_rtd:
     import sphinx_rtd_theme
@@ -116,6 +116,6 @@ html_static_path = ["_static"]
 
 
 
-# If not "", a 'Last updated on:' timestamp is inserted at every page bottom,
+# If not "", a "Last updated on:" timestamp is inserted at every page bottom,
 # using the given strftime format.
 html_last_updated_fmt = "%b %d, %Y"

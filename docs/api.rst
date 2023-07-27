@@ -5,7 +5,7 @@ libtemplate reference guide
 
 .. autosummary::
    :toctree: _autosummary
-   :template: custom-module-template.rst
+   :template: custom_module_template.rst
    :recursive:
 
    libtemplate

@@ -11,7 +11,7 @@ Note #1: Files to leave unchanged
 
 Here is a list of files and directories that you do not need to change:
 
-- requirements-doc.txt
+- requirements_doc.txt
 - .gitlab-ci.yml (if generated)
 - docs/Makefile
 - docs/make.bat
@@ -19,7 +19,7 @@ Here is a list of files and directories that you do not need to change:
 - docs/index.html (if generated)
 - docs/.nojekyll (if generated)
 - docs/changelog.rst
-- docs/_static/readthedocs-custom.css
+- docs/_static/readthedocs_custom.css
 - docs/_templates
 
 Note #2: Recommended coding conventions

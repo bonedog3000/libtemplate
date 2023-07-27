@@ -8,9 +8,9 @@
 
 # Project information
 
-project = 'libtemplate'
-copyright = 'copyright-year-placeholder, author-placeholder'
-author = 'author-placeholder'
+project = "libtemplate"
+copyright = "copyright-year-placeholder, author-placeholder"
+author = "author-placeholder"
 
 
 
@@ -39,23 +39,23 @@ except:
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.extlinks',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
-    'sphinx_autodoc_typehints',
-    'sphinx.ext.githubpages',
-    'numpydoc',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
+    "sphinx.ext.coverage",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.viewcode",
+    "sphinx_autodoc_typehints",
+    "sphinx.ext.githubpages",
+    "numpydoc",
 ]
 
 
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 
 
@@ -85,15 +85,15 @@ numfig_secnum_depth = 6
 
 # Cross links to other sphinx documentations
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
-    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
-    'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None)}
+    "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://docs.scipy.org/doc/numpy/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/reference/", None)}
 
 
 
 # Extlinks
-extlinks = {'arxiv': ('https://arxiv.org/abs/%s', None),
-            'doi': ('https://dx.doi.org/%s', None)}
+extlinks = {"arxiv": ("https://arxiv.org/abs/%s", None),
+            "doi": ("https://dx.doi.org/%s", None)}
 
 
 
@@ -105,17 +105,17 @@ if not on_rtd:
     import sphinx_rtd_theme
     html_theme = "sphinx_rtd_theme"
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-html_css_files = ["readthedocs-custom.css"] # Override some CSS settings.
+html_css_files = ["readthedocs_custom.css"] # Override some CSS settings.
 
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 
 
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+# If not "", a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = "%b %d, %Y"

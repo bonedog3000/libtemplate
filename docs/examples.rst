@@ -10,4 +10,4 @@ that they can see all the different features that have been implemented in
 
 .. toctree::
 
-   examples/scaling-a-rectangle-example.rst
+   examples/scaling_a_rectangle_example.rst

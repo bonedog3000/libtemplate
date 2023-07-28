@@ -8,7 +8,6 @@ __pycache__/
 # Ignore select files
 gencopy.py
 libtemplate/_version.py
-_todo.rst
 
 # Ignore .pyc files
 *.pyc
